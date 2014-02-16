@@ -51,3 +51,9 @@ CPU instruction set accuracy test results (Blargg's cpu_instrs.gb test ROM):
 * **Gambatte:**
 
 	![Gambatte](http://i.imgur.com/vGHFz.png "Passes")
+
+Running the Server
+-------------------------------
+* To run the server you must first do `npm install`
+* Make sure you have node-webkit installed `npm install -g nodewebkit`
+* Build the app using `make build`

@@ -1,16 +1,26 @@
+* {
+     user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+}
+
+::selection { background: transparent;color:inherit; }
+::-moz-selection { background: transparent;color:inherit; }
+
 @charset "utf-8";
+
+@font-face {
+	font-family: 'slksc';
+	src: url(../fonts/slkscr.ttf);
+}
+
 html {
-	background-color: rgb(200, 225, 225);
-	background-attachment: fixed;
-	background-repeat: none;
-	background-image: url("../images/gradient_01.svg");
-	background-image: -webkit-linear-gradient(315deg, rgb(200, 200, 255), rgb(200, 255, 200));
-	background-image: -moz-linear-gradient(315deg, rgb(200, 200, 255), rgb(200, 255, 200));
-	background-image: -o-linear-gradient(315deg, rgb(200, 200, 255), rgb(200, 255, 200));
-	background-image: linear-gradient(135deg, rgb(200, 200, 255), rgb(200, 255, 200));
+	background: #000;
 	margin: 0;
 	padding: 0;
-	font-family: arial;
+	font-family: 'slksc';
 	margin: 0;
 	padding: 0;
 	overflow: auto;
@@ -19,6 +29,9 @@ html {
 	width: 100%;
 	height: 100%;
 	text-rendering: optimizeSpeed;
+}
+button {
+	font-family: 'slksc';
 }
 body {
 	width: auto;
@@ -44,22 +57,21 @@ div.window {
 	position: absolute;
 	overflow: hidden;
 	margin: 0;
-	padding: 10px 0px 0px 0px;
+	padding: 0;
 	top: 0;
 	left: 0;
 	color: rgb(0, 0, 0);
 	font-size: 16px;
-	-webkit-border-radius: 10px 10px 3px 3px;
-	border-radius: 10px 10px 3px 3px;
-	-webkit-box-shadow: 5px 5px 10px rgb(30, 30, 30);
-	box-shadow: 5px 5px 10px rgb(30, 30, 30);
 	background-color: rgb(200, 200, 200);
 	z-index: 2;
 	opacity: 1;
 }
+div.window.dark {
+	background-color: rgb(0, 0, 0);
+}
 div#GameBoy {
-	min-height: 340px;
-	min-width: 400px;
+	min-height: 600px;
+	min-width: 905px;
 }
 div#input_select, div#save_importer {
 	min-height: 100px;
@@ -77,26 +89,12 @@ div.menubar {
 	position: absolute;
 	left: 0;
 	right: 0;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: rgb(150, 150, 150);
-	border-left-style: none;
-	border-right-style: none;
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-	border-bottom-color: rgb(50, 50, 50);
+	border: 0;
 	text-overflow: ellipsis;
 	margin: 0;
-	padding: 0 0 0 3px;
+	padding: 0;
 	text-align: left;
-	background-color: rgb(210, 210, 210);
-	background-repeat: repeat-x;
-	background-attachment: scroll;
-	background-image: url("../images/gradient_02.svg");
-	background-image: -webkit-linear-gradient(top, rgb(150, 150, 150), rgb(220, 220, 220), rgb(180, 180, 180));
-	background-image: -moz-linear-gradient(top, rgb(150, 150, 150), rgb(220, 220, 220), rgb(180, 180, 180));
-	background-image: -o-linear-gradient(top, rgb(150, 150, 150), rgb(220, 220, 220), rgb(180, 180, 180));
-	background-image: linear-gradient(top, rgb(150, 150, 150), rgb(220, 220, 220), rgb(180, 180, 180));
+	background-color: rgb(0, 0, 0);
 }
 div.menubar > span {
 	cursor: pointer;
@@ -107,41 +105,24 @@ div.menubar > span {
 	margin: 3px 3px 3px 0;
 	display: inline;
 	display: inline-block;
+	color: #fff;
 }
 div.menubar > span:hover {
-	-webkit-box-shadow: 2px 2px 1px rgb(30, 30, 30);
-	box-shadow: 2px 2px 1px rgb(30, 30, 30);
-	background-color: rgb(160, 160, 160);
-	background-repeat: repeat-x;
-	background-attachment: scroll;
-	background-image: url("../images/gradient_03.svg");
-	background-image: -webkit-linear-gradient(top, rgb(160, 160, 160), rgb(190, 190, 190), rgb(160, 160, 160));
-	background-image: -moz-linear-gradient(top, rgb(160, 160, 160), rgb(190, 190, 190), rgb(160, 160, 160));
-	background-image: -o-linear-gradient(top, rgb(160, 160, 160), rgb(190, 190, 190), rgb(160, 160, 160));
-	background-image: linear-gradient(top, rgb(160, 160, 160), rgb(190, 190, 190), rgb(160, 160, 160));
+	background: none;
 }
 div.menubar > span:active {
-	-webkit-box-shadow: inset 2px 2px 1px rgb(30, 30, 30);
-	box-shadow: inset 2px 2px 1px rgb(30, 30, 30);
-	background-color: rgb(220, 220, 220);
-	background-repeat: repeat-x;
-	background-attachment: scroll;
-	background-image: url("../images/gradient_04.svg");
-	background-image: -webkit-linear-gradient(top, rgb(190, 190, 190), rgb(160, 160, 160), rgb(190, 190, 190));
-	background-image: -moz-linear-gradient(top, rgb(190, 190, 190), rgb(160, 160, 160), rgb(190, 190, 190));
-	background-image: -o-linear-gradient(top, rgb(190, 190, 190), rgb(160, 160, 160), rgb(190, 190, 190));
-	background-image: linear-gradient(top, rgb(190, 190, 190), rgb(160, 160, 160), rgb(190, 190, 190));
+	background: none;
 }
 div#gfx {
 	height: auto;
-	width: auto;
+	width: 677px;
 	margin: 0;
 	padding: 0;
 	position: absolute;
 	bottom: 3px;
 	left: 3px;
 	right: 3px;
-	top: 43px;
+	top: 28px;
 	background-color: rgb(200, 50, 50);
 	background-repeat: repeat-x;
 	background-attachment: scroll;
@@ -150,6 +131,34 @@ div#gfx {
 	background-image: -moz-linear-gradient(top, rgb(200, 50, 50), rgb(200, 75, 150));
 	background-image: -o-linear-gradient(top, rgb(200, 50, 50), rgb(200, 75, 150));
 	background-image: linear-gradient(top, rgb(200, 50, 50), rgb(200, 75, 150));
+}
+div#voting {
+	background: #000;
+	width: 225px;
+	height: 569px;
+	right: 0;
+	top: 28px;
+	position: absolute;
+	color: #fff;
+}
+div#voting h1 {
+	font-size: 18px;
+	text-align: center;
+}
+div#voting h1.green {
+	color: green;
+}
+div#voting ul {
+	text-align: left;
+	width: 70%;
+	margin: auto;
+}
+div#voting ul li.selected {
+	color: green;
+}
+div#voting ul strong {
+	width: 70px;
+	display: inline-block;
 }
 body > div#fullscreenContainer {
 	position: absolute;	/*Fallback here if fixed isn't supported*/
@@ -346,9 +355,7 @@ div#settings > div#toggle_settings > div.setting {
 	border: none;
 }
 div#settings > div#toggle_settings > div.setting:hover {
-	border-bottom-style: dashed;
-	border-bottom-color: rgb(70, 70, 70);
-	border-bottom-width: 1px;
+	background: #efefef;
 }
 div#settings > div#toggle_settings > div.setting input {
 	float: right;

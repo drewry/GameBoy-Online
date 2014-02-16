@@ -19,12 +19,23 @@
         <script type="text/javascript" src="js/other/resampler.js"/>
         <script type="text/javascript" src="js/other/XAudioServer.js"/>
         <script type="text/javascript" src="js/other/resize.js"/>
+        <script type="text/javascript" src="js/other/voting.js"/>
+        <script type="text/javascript" src="js/jquery-1.11.0.min.js"/>
+        <script type="text/javascript" src="js/underscore-min.js"/>
         <script type="text/javascript" src="js/GameBoyCore.js"/>
         <script type="text/javascript" src="js/GameBoyIO.js"/>
+        <script>
+        $(function(){
+            $('*:[unselectable=on]').mousedown(function(event) {
+                event.preventDefault();
+                return false;
+            });
+        });
+        </script>
         <title>GameBoy Online</title>
     </head>
-    <body>
-        <div id="GameBoy" class="window">
+    <body unselectable="on">
+        <div id="GameBoy" class="window dark">
             <div class="menubar">
                 <span id="GameBoy_file_menu">File</span>
                 <span id="GameBoy_settings_menu">Settings</span>
@@ -35,6 +46,11 @@
                 <canvas id="mainCanvas"/>
                 <span id="title">GameBoy</span>
                 <span id="port_title">Online</span>
+            </div>
+            <div id="voting">
+                <h1>Next vote in</h1>
+                <h1 class="green" id="vote_counter">10 seconds</h1>
+                <ul id="vote_results"><li>No votes</li></ul>
             </div>
         </div>
         <div id="terminal" class="window">

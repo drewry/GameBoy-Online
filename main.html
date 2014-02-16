@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gameboy Online</title>
+  <script type="text/javascript" src="public/js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <style>
+    * {
+       user-select: none;
+      -khtml-user-select: none;
+      -o-user-select: none;
+      -moz-user-select: -moz-none;
+      -webkit-user-select: none;
+    }
+
+    ::selection { background: transparent;color:inherit; }
+    ::-moz-selection { background: transparent;color:inherit; }
+    @font-face {
+      font-family: 'slksc';
+      src: url(./public/fonts/slkscr.ttf);
+    }
+    body, html { font-family: 'slksc'; padding: 0; margin: 0; background: #000; color: #fff; }
+    #form { width: 80%; height: 200px; margin: 50px auto; }
+    #form label { width: 100px; display: inline-block; }
+    #form input, #form button { background: #fff; color: #000; padding: 10px; border: 0; font-family: 'slksc'; font-size: 18px; }
+    #form input:focus, #form button:focus  { outline: none; }
+  </style>
+</head>
+<body>
+  <div id="form">
+    <h1>IRC Info</h1>
+    <p><label>Channel:</label> <input type="text" id="channel" value="gamebot" /></p>
+    <p><label>Server:</label> <input type="text" id="server" value="irc.freenode.net" /></p>
+    <button>Continue</button>
+  </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "gameboy-online",
+  "description": "Allowing commands from an IRC server",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "irc": "~0.3.6",
+    "underscore": "~1.6.0"
+  },
+  "main": "main.html",
+  "window": {
+    "width": 905,
+    "height": 600,
+    "min_width": 905,
+    "min_height": 600,
+    "max_width": 905,
+    "max_height": 600,
+    "title": "Gameboy Online",
+    "toolbar": false,
+    "icon": "icon.png"
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

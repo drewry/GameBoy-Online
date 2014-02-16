@@ -23,14 +23,16 @@ module.exports = function(options) {
 
   // Create the configuration
   var config = {
-    channels: ["#" + options.channel],
-    server  : options.server,
-    botName : "gamebot"
+    channels : ["#" + options.channel],
+    server   : options.server,
+    username : options.username,
+    password : options.password
   };
 
   // Create the bot name
-  var bot = new irc.Client(config.server, config.botName, {
-    channels: config.channels
+  var bot = new irc.Client(config.server, config.username, {
+    channels: config.channels,
+    password: config.password
   });
 
   // listen to the messages
